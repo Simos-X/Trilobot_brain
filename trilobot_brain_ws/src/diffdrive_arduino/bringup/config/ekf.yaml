@@ -1,0 +1,24 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 20.0
+    two_d_mode: true
+    publish_tf: true
+    publish_acceleration: true
+    frame_id: "odom"
+    base_link_frame: "base_link"
+    world_frame: "odom"
+    odometry0: /diffbot_base_controller/odom
+    odom0: /diffbot_base_controller/odom
+    odom0_config: [false, false, false,
+                  false, false, true,
+                  true, true, false,
+                  false, false, true,
+                  false, false, false]
+
+    imu0: /chassis_imu/data
+    imu0_config: [false, false, false,
+                  false, false, false,
+                  false, false, false,
+                  false, false, true,
+                  false, false, false]
+    imu0_differential: true

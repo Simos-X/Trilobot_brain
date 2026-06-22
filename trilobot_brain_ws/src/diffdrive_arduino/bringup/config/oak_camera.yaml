@@ -1,0 +1,16 @@
+/oak:
+  ros__parameters:
+    rgb:
+      i_low_bandwidth: true
+    left:
+      i_publish_topic: true
+      i_low_bandwidth: true
+    right:
+      i_publish_topic: true
+      i_low_bandwidth: true
+    stereo:
+      i_low_bandwidth: true
+    i_publish_left_rect: true
+    i_publish_right_rect: true
+    pointcloud:
+      enable: true

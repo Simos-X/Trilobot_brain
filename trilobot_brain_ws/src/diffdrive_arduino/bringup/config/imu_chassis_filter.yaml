@@ -1,0 +1,15 @@
+imu_filter:
+  ros__parameters:
+    gain_acc: 0.1
+    gain_mag: 0.5
+    stateless: false
+    use_mag: true
+    publish_tf: false
+    reverse_tf: false
+    fixed_frame: "odom"
+    constant_dt: 0.0
+    publish_debug_topics: true
+    world_frame: "enu"  # Changed from "enu" to "ned" to flip yaw direction
+    do_bias_estimation: true
+    do_adaptive_gain: true
+    orientation_stddev: 0.01 

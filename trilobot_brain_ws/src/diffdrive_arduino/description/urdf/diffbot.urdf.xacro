@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="diffdrive_robot">
+  <xacro:arg name="prefix" default="" />
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/diffbot_description.urdf.xacro" />
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/lidar.xacro" />
+
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/oakd_description/include/base_macro.urdf.xacro" />
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/oakd_description/include/depthai_macro.urdf.xacro" />
+  
+  <xacro:include filename="$(find diffdrive_arduino)/urdf/diffbot.materials.xacro" />
+  <xacro:include filename="$(find diffdrive_arduino)/ros2_control/diffbot.ros2_control.xacro" />
+  
+  <xacro:diffbot prefix="$(arg prefix)" />
+  <xacro:diffbot_ros2_control name="DiffBot" prefix="$(arg prefix)" />
+  
+  <xacro:depthai_camera
+      camera_name="oak"
+      camera_model="OAK-D-S2"
+      base_frame="$(arg prefix)oak-d_frame"
+      parent="$(arg prefix)head_pitch_link"
+      cam_pos_x="0.020"
+      cam_pos_y="0.0"
+      cam_pos_z="0.005"
+      cam_roll="0.0"
+      cam_pitch="0.0"
+      cam_yaw="0.0"
+      rs_compat="false" />
+</robot>
